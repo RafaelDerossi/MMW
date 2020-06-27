@@ -17,9 +17,9 @@ namespace MMW.Dominio.Entidades
 
         public string NumeroNota { get; set; }
         
-        public Boolean baixada { get; set; }
+        public Boolean Baixada { get; set; }
                 
-        public DateTime dataBaixa { get; set; }
+        public DateTime DataBaixa { get; set; }
         
         public virtual ICollection<ItemEntrada> Itens { get; set; }
                 
@@ -30,7 +30,7 @@ namespace MMW.Dominio.Entidades
                 decimal valor = 0;
                 try
                 {
-                    valor = Itens.Sum(e => e.seguro);
+                    valor = Itens.Sum(e => e.Seguro);
                 }
                 catch (Exception)
                 {
@@ -46,7 +46,7 @@ namespace MMW.Dominio.Entidades
                 decimal valor = 0;
                 try
                 {
-                    valor = Itens.Sum(e => e.frete);
+                    valor = Itens.Sum(e => e.Frete);
                 }
                 catch (Exception)
                 {
@@ -62,7 +62,7 @@ namespace MMW.Dominio.Entidades
                 decimal valor = 0;
                 try
                 {
-                    valor = Itens.Sum(e => e.outrasDespesas);
+                    valor = Itens.Sum(e => e.OutrasDespesas);
                 }
                 catch (Exception)
                 {
@@ -78,7 +78,7 @@ namespace MMW.Dominio.Entidades
                 decimal valor = 0;
                 try
                 {
-                    valor = Itens.Sum(e => e.desconto);
+                    valor = Itens.Sum(e => e.Desconto);
                 }
                 catch (Exception)
                 {
@@ -94,7 +94,7 @@ namespace MMW.Dominio.Entidades
                 decimal valor = 0;
                 try
                 {
-                    valor = Itens.Sum(e => e.total);
+                    valor = Itens.Sum(e => e.Total);
                 }
                 catch (Exception)
                 {

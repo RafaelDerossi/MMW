@@ -23,7 +23,7 @@ namespace MMW.Dominio.Entidades
                 try
                 {
                     est = Estoques                         
-                         .Sum(e => e.emEstoque);
+                         .Sum(e => e.EmEstoque);
                 }
                 catch (Exception)
                 {

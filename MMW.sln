@@ -13,6 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0 Infraestrutura", "4.0 I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMW.Dominio", "MMW.Dominio\MMW.Dominio.csproj", "{A4EBBB6B-9BD6-4F26-B77E-90F7475457E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 Persistencia", "4.1 Persistencia", "{F841C9AB-E75D-45DB-A569-4C8B7B830570}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 Transversal", "4.2 Transversal", "{B9F3B89F-867A-4E2C-A7AF-8C333210B6BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMW.Infra.Persistencia", "MMW.Infra.Persistencia\MMW.Infra.Persistencia.csproj", "{D0464A0B-6987-4B43-A1D2-32EA8D4A4FC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +29,19 @@ Global
 		{A4EBBB6B-9BD6-4F26-B77E-90F7475457E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4EBBB6B-9BD6-4F26-B77E-90F7475457E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4EBBB6B-9BD6-4F26-B77E-90F7475457E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0464A0B-6987-4B43-A1D2-32EA8D4A4FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0464A0B-6987-4B43-A1D2-32EA8D4A4FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0464A0B-6987-4B43-A1D2-32EA8D4A4FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0464A0B-6987-4B43-A1D2-32EA8D4A4FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A4EBBB6B-9BD6-4F26-B77E-90F7475457E0} = {B20EAA9E-5836-495E-9DBD-D622590575C0}
+		{F841C9AB-E75D-45DB-A569-4C8B7B830570} = {70A93AD1-BF61-4313-AB15-CBFD08DB07D9}
+		{B9F3B89F-867A-4E2C-A7AF-8C333210B6BF} = {70A93AD1-BF61-4313-AB15-CBFD08DB07D9}
+		{D0464A0B-6987-4B43-A1D2-32EA8D4A4FC2} = {F841C9AB-E75D-45DB-A569-4C8B7B830570}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B927ACF-FA50-4D8C-9DA8-C59C1EE6D369}
