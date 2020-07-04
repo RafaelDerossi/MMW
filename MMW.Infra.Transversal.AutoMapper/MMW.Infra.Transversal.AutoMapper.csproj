@@ -5,17 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="AutoMapper" Version="10.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MMW.Aplicacao\MMW.Aplicacao.csproj" />
-    <ProjectReference Include="..\MMW.Dominio.Servicos\MMW.Dominio.Servicos.csproj" />
+    <ProjectReference Include="..\MMW.Aplicacao.DTO\MMW.Aplicacao.DTO.csproj" />
     <ProjectReference Include="..\MMW.Dominio\MMW.Dominio.csproj" />
-    <ProjectReference Include="..\MMW.Infra.Persistencia\MMW.Infra.Persistencia.csproj" />
   </ItemGroup>
 
 </Project>

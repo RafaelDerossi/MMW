@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MMW.Dominio.Entidades
+namespace MMW.Aplicacao.ViewModels
 {
-   public class BaseDTO
+   public class BaseViewModel
     {
         public int Id { get; set; }     
 

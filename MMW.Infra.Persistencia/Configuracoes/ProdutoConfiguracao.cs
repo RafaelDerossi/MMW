@@ -16,12 +16,12 @@ namespace MMW.Infra.Persistencia.Configuracoes
             builder.Property(a => a.DataInclusao)
                 .HasColumnName("DataInclusao")
                 .IsRequired()
-                .HasColumnType("Date")
+                .HasColumnType("DateTime")
                 .HasDefaultValueSql("GetDate()");
             builder.Property(a => a.DataAlteracao)
                 .HasColumnName("DataAlteracao")
                 .IsRequired()
-                .HasColumnType("Date")
+                .HasColumnType("DateTime")
                 .HasDefaultValueSql("GetDate()");
         }
     }

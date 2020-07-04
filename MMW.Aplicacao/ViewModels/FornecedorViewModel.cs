@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MMW.Dominio.Entidades
+﻿namespace MMW.Aplicacao.ViewModels
 {
-   public class FornecedorDTO : BaseDTO
+    public class FornecedorViewModel : BaseViewModel
     {        
         public string CNPJ { get; set; }
                 

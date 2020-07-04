@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MMW.Dominio.Entidades
+﻿
+namespace MMW.Aplicacao.ViewModels
 {
-   public class ItemEntradaDTO : BaseDTO
+   public class ItemEntradaViewModel : BaseViewModel
     {
-        public virtual Entrada Entrada { get; set; }        
+        public virtual EntradaViewModel Entrada { get; set; }        
         public int EntradaId { get; set; }
 
-        public virtual Produto Produto { get; set; }        
+        public virtual ProdutoViewModel Produto { get; set; }        
         public int ProdutoId { get; set; }
                 
         public string CodIntForn { get; set; }

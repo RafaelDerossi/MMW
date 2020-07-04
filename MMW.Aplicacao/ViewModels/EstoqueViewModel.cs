@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MMW.Dominio.Entidades
+﻿namespace MMW.Aplicacao.ViewModels
 {
-   public class EstoqueDTO : BaseDTO
+    public class EstoqueViewModel : BaseViewModel
     {
-        public virtual Produto Produto { get; set; }        
+        public virtual ProdutoViewModel Produto { get; set; }        
         public int ProdutoId { get; set; }
 
-        public virtual LojaDTO Loja { get; set; }
+        public virtual LojaViewModel Loja { get; set; }
         public int LojaId { get; set; }
 
         public decimal EmEstoque { get; set; }       

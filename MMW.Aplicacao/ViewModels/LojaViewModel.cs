@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MMW.Dominio.Entidades
+namespace MMW.Aplicacao.ViewModels
 {
-  public class LojaDTO : BaseDTO
+  public class LojaViewModel : BaseViewModel
     {
         public string CNPJ { get; set; }
         

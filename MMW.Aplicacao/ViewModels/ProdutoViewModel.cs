@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MMW.Aplicacao.DTO
+namespace MMW.Aplicacao.ViewModels
 {
-   public class ProdutoDTO : BaseDTO
+   public class ProdutoViewModel : BaseViewModel
     {
         public string Descricao { get; set; }
 
@@ -14,7 +14,7 @@ namespace MMW.Aplicacao.DTO
 
         public Boolean Inativo { get; set; }
 
-        public virtual ICollection<EstoqueDTO> Estoques { get; set; }
+        public virtual ICollection<EstoqueViewModel> Estoques { get; set; }
 
         public decimal EstoqueTotal
         {
@@ -34,6 +34,6 @@ namespace MMW.Aplicacao.DTO
             }
         }
 
-        public virtual ICollection<ItemEntradaDTO> ItensEntrada { get; set; }
+        public virtual ICollection<ItemEntradaViewModel> ItensEntrada { get; set; }
     }
 }

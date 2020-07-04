@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace MMW.Dominio.Entidades
+namespace MMW.Aplicacao.ViewModels
 {
-   public class EntradaDTO : BaseDTO
+    public class EntradaViewModel : BaseViewModel
     {
-        public virtual LojaDTO Loja { get; set; }
+        public virtual LojaViewModel Loja { get; set; }
         public int LojaId { get; set; }
 
-        public virtual FornecedorDTO Fornecedor { get; set; }
+        public virtual FornecedorViewModel Fornecedor { get; set; }
         public int FornecedorId { get; set; }
                 
         public DateTime DataEmissaoNota { get; set; }
@@ -21,7 +20,7 @@ namespace MMW.Dominio.Entidades
                 
         public DateTime DataBaixa { get; set; }
         
-        public virtual ICollection<ItemEntradaDTO> Itens { get; set; }
+        public virtual ICollection<ItemEntradaViewModel> Itens { get; set; }
                 
         public decimal Seguro
         {
