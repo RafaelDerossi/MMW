@@ -1,0 +1,113 @@
+﻿@model IEnumerable<MMW.Aplicacao.ViewModels.EntradaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Loja
+            </th>
+            <th>
+                Fornecedor
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEmissaoNota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroNota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Baixada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataBaixa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seguro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Frete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutrasDespesas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desconto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalDosProdutos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNota)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.DataInclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAlteracao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loja.Fantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fornecedor.Fantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEmissaoNota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroNota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baixada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataBaixa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seguro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Frete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutrasDespesas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desconto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDosProdutos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalNota)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAlteracao)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

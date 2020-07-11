@@ -12,6 +12,8 @@ namespace MMW.Aplicacao.AutoMapper
 
             CreateMap<Loja, LojaViewModel>().ReverseMap();
 
+            CreateMap<Fornecedor, FornecedorViewModel>().ReverseMap();
+
             CreateMap<Estoque, EstoqueViewModel>().ReverseMap();            
 
             CreateMap<Entrada, EntradaViewModel>().ReverseMap();            

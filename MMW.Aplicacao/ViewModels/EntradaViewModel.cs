@@ -1,27 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace MMW.Aplicacao.ViewModels
 {
     public class EntradaViewModel : BaseViewModel
     {
+        [Display(Name = "Loja")]
         public virtual LojaViewModel Loja { get; set; }
         public int LojaId { get; set; }
 
+        [Display(Name = "Fornecedor")]
         public virtual FornecedorViewModel Fornecedor { get; set; }
         public int FornecedorId { get; set; }
-                
+
+        [Display(Name = "Dt.Emissao da Nota")]
         public DateTime DataEmissaoNota { get; set; }
 
+        [Display(Name = "Nº da Nota")]
         public string NumeroNota { get; set; }
+
         
         public Boolean Baixada { get; set; }
-                
+
+        [Display(Name = "Dt.da Baixa ")]
         public DateTime DataBaixa { get; set; }
         
         public virtual ICollection<ItemEntradaViewModel> Itens { get; set; }
                 
+
         public decimal Seguro
         {
             get
@@ -53,7 +61,8 @@ namespace MMW.Aplicacao.ViewModels
                 return valor;
             }
         }
-                
+
+        [Display(Name = "Outras Despesas")]
         public decimal OutrasDespesas
         {
             get
@@ -85,7 +94,8 @@ namespace MMW.Aplicacao.ViewModels
                 return valor;
             }
         }
-        
+
+        [Display(Name = "Total dos Produtos")]
         public decimal TotalDosProdutos
         {
             get
@@ -101,7 +111,8 @@ namespace MMW.Aplicacao.ViewModels
                 return valor;
             }
         }
-            
+
+        [Display(Name = "Total da Nota")]
         public decimal TotalNota
         {
             get

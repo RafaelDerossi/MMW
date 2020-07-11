@@ -1,21 +1,30 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace MMW.Aplicacao.ViewModels
 {
    public class ItemEntradaViewModel : BaseViewModel
     {
+        [Display(Name = "Entrada")]
         public virtual EntradaViewModel Entrada { get; set; }        
         public int EntradaId { get; set; }
 
+        [Display(Name = "Produto")]
         public virtual ProdutoViewModel Produto { get; set; }        
         public int ProdutoId { get; set; }
-                
+
+        [Display(Name = "Cod.Interno do Fornecedor")]
         public string CodIntForn { get; set; }
 
+        
         public int Item { get; set; }
-                
+
+        [Display(Name = "Quantidade")]
         public decimal Qtd { get; set; }
-                
+
+        [Display(Name = "Preço Unitario")]
         public decimal PrcUnit { get; set; }
+
 
         public decimal Desconto { get; set; }
                 
@@ -24,11 +33,14 @@ namespace MMW.Aplicacao.ViewModels
         public decimal Seguro { get; set; }
 
         public decimal Frete { get; set; }
-                
+
+        [Display(Name = "Outras Despesas")]
         public decimal OutrasDespesas { get; set; }
-                
+
+        [Display(Name = "Preço de Custo")]
         public decimal PrcCustoCalc { get; set; }
 
+        [Display(Name = "Desconto por un.")]
         public decimal DescontoPorUN
         {
             get
@@ -45,6 +57,7 @@ namespace MMW.Aplicacao.ViewModels
             }
         }
 
+        [Display(Name = "Seguro por un.")]
         public decimal SeguroPorUN
         {
             get
@@ -61,6 +74,7 @@ namespace MMW.Aplicacao.ViewModels
             }
         }
 
+        [Display(Name = "Frete por un.")]
         public decimal FretePorUN
         {
             get
@@ -76,7 +90,8 @@ namespace MMW.Aplicacao.ViewModels
 
             }
         }
-                
+
+        [Display(Name = "Outras Despesas por un.")]
         public decimal OutrasDespesasPorUN
         {
             get
@@ -93,9 +108,10 @@ namespace MMW.Aplicacao.ViewModels
             }
         }
 
-
+        [Display(Name = "Mark-up")]
         public decimal Markup { get; set; }
-                
+
+        [Display(Name = "Preço de Venda Sugerido")]
         public decimal PrcVendaSugerido
         {
             get

@@ -26,6 +26,27 @@ namespace MMW.Infra.Transversal.IoC
 
             builder.RegisterType<LojaRepositorio>().As<ILojaRepositorio>();
 
+
+            builder.RegisterType<FornecedorServicoAplicacao>().As<IFornecedorServicoAplicacao>();
+
+            builder.RegisterType<FornecedorServicoDominio>().As<IFornecedorServicoDominio>();
+
+            builder.RegisterType<FornecedorRepositorio>().As<IFornecedorRepositorio>();
+
+
+            builder.RegisterType<EntradaServicoAplicacao>().As<IEntradaServicoAplicacao>();
+
+            builder.RegisterType<EntradaServicoDominio>().As<IEntradaServicoDominio>();
+
+            builder.RegisterType<EntradaRepositorio>().As<IEntradaRepositorio>();
+
+
+            builder.RegisterType<ItemEntradaServicoAplicacao>().As<IItemEntradaServicoAplicacao>();
+
+            builder.RegisterType<ItemEntradaServicoDominio>().As<IItemEntradaServicoDominio>();
+
+            builder.RegisterType<ItemEntradaRepositorio>().As<IItemEntradaRepositorio>();
+
         }
     }
 }
