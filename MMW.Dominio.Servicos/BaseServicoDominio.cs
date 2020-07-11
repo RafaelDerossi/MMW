@@ -2,7 +2,6 @@
 using MMW.Dominio.Interfaces.Servicos;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MMW.Dominio.Servicos
 {
@@ -35,9 +34,9 @@ namespace MMW.Dominio.Servicos
             _repositorio.Dispose();
         }
 
-        public void Excluir(T obj)
+        public void Excluir(int id)
         {
-            _repositorio.Excluir(obj);
+            _repositorio.Excluir(id);
         }
 
         public IEnumerable<T> Listar()

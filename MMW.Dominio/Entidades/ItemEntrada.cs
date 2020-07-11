@@ -106,6 +106,12 @@ namespace MMW.Dominio.Entidades
                 return PrcCustoCalc * ((Markup / 100) + 1);
             }
         }
-            
+
+
+        public void CalculaPrcCusto()
+        {
+            PrcCustoCalc = PrcUnit + FretePorUN +
+            OutrasDespesasPorUN + SeguroPorUN - DescontoPorUN;
+        }
     }
 }

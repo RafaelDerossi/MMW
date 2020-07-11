@@ -47,10 +47,9 @@ namespace MMW.Aplicacao.Servicos
             return produtoViewModel;
         }
 
-        public void Excluir(ProdutoViewModel produtoViewModel)
-        {
-            var produto = _mapper.Map<Produto>(produtoViewModel);
-            _produtoServicoDominio.Excluir(produto);
+        public void Excluir(int id)
+        {            
+            _produtoServicoDominio.Excluir(id);
         }
 
         public IEnumerable<ProdutoViewModel> Listar()

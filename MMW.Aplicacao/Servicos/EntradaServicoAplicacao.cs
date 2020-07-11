@@ -47,10 +47,9 @@ namespace MMW.Aplicacao.Servicos
             return entradaViewModel;
         }
 
-        public void Excluir(EntradaViewModel entradaViewModel)
-        {
-            var entrada = _mapper.Map<Entrada>(entradaViewModel);
-            _entradaServicoDominio.Excluir(entrada);
+        public void Excluir(int id)
+        {            
+            _entradaServicoDominio.Excluir(id);
         }
 
         public IEnumerable<EntradaViewModel> Listar()

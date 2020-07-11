@@ -23,10 +23,11 @@ namespace MMW.Aplicacao.Servicos
         public void Adicionar(ItemEntradaViewModel itemEntradaViewModel)
         {
             try
-            {
-                //var produto = _mapper.Map<Produto>(produtoViewModel);
-                var itemEntrada = new ItemEntrada();
-                _mapper.Map(itemEntradaViewModel, itemEntrada);
+            {                
+                var itemEntrada = _mapper.Map<ItemEntrada>(itemEntradaViewModel);
+                //var itemEntrada = new ItemEntrada();
+                //_mapper.Map(itemEntradaViewModel, itemEntrada);
+                itemEntrada.CalculaPrcCusto();
                 _itemEntradaServicoDominio.Adicionar(itemEntrada);
             }
             catch (Exception e)
@@ -47,10 +48,9 @@ namespace MMW.Aplicacao.Servicos
             return itemEntradaViewModel;
         }
 
-        public void Excluir(ItemEntradaViewModel itemEntradaViewModel)
-        {
-            var itemEntrada = _mapper.Map<ItemEntrada>(itemEntradaViewModel);
-            _itemEntradaServicoDominio.Excluir(itemEntrada);
+        public void Excluir(int id)
+        {            
+            _itemEntradaServicoDominio.Excluir(id);
         }
 
         public IEnumerable<ItemEntradaViewModel> Listar()

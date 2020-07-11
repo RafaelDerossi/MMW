@@ -47,10 +47,9 @@ namespace MMW.Aplicacao.Servicos
             return fornecedorViewModel;
         }
 
-        public void Excluir(FornecedorViewModel lojaViewModel)
-        {
-            var fornecedor = _mapper.Map<Fornecedor>(lojaViewModel);
-            _fornecedorServicoDominio.Excluir(fornecedor);
+        public void Excluir(int id)
+        {            
+            _fornecedorServicoDominio.Excluir(id);
         }
 
         public IEnumerable<FornecedorViewModel> Listar()

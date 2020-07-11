@@ -1,0 +1,116 @@
+﻿@model MMW.Aplicacao.ViewModels.ItemEntradaViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adicionar Produto</h1>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="img-thumbnail">
+            <h4>Entrada</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Entrada.DataEmissaoNota)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Entrada.DataEmissaoNota)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Entrada.NumeroNota)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Entrada.NumeroNota)
+                </dd>
+            </dl>
+        </div>       
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="img-thumbnail">
+            <h4>Item Entrada</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="EntradaId" class="form-control" />
+                        <span asp-validation-for="EntradaId" class="text-danger"></span>
+                        
+                        <div class="form-group">
+                            <label asp-for="ProdutoId" class="control-label"></label>
+                            <select asp-for="ProdutoId" asp-items="ViewBag.produtoId" class="form-control"></select>                            
+                            <span asp-validation-for="ProdutoId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CodIntForn" class="control-label"></label>
+                            <input asp-for="CodIntForn" class="form-control" />
+                            <span asp-validation-for="CodIntForn" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Item" class="control-label"></label>
+                            <input asp-for="Item" class="form-control" />
+                            <span asp-validation-for="Item" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Qtd" class="control-label"></label>
+                            <input asp-for="Qtd" class="form-control" />
+                            <span asp-validation-for="Qtd" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PrcUnit" class="control-label"></label>
+                            <input asp-for="PrcUnit" class="form-control" />
+                            <span asp-validation-for="PrcUnit" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desconto" class="control-label"></label>
+                            <input asp-for="Desconto" class="form-control" />
+                            <span asp-validation-for="Desconto" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Total" class="control-label"></label>
+                            <input asp-for="Total" class="form-control" />
+                            <span asp-validation-for="Total" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Seguro" class="control-label"></label>
+                            <input asp-for="Seguro" class="form-control" />
+                            <span asp-validation-for="Seguro" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Frete" class="control-label"></label>
+                            <input asp-for="Frete" class="form-control" />
+                            <span asp-validation-for="Frete" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="OutrasDespesas" class="control-label"></label>
+                            <input asp-for="OutrasDespesas" class="form-control" />
+                            <span asp-validation-for="OutrasDespesas" class="text-danger"></span>
+                        </div>                       
+                        <div class="form-group">
+                            <label asp-for="Markup" class="control-label"></label>
+                            <input asp-for="Markup" class="form-control" />
+                            <span asp-validation-for="Markup" class="text-danger"></span>
+                        </div>                        
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>       
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Voltar", "Details", new { id = Model.EntradaId })
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

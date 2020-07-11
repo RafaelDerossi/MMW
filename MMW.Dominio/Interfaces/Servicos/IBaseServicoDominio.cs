@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MMW.Dominio.Interfaces.Servicos
 {
-    public interface IBaseRepositorio<T> where T : class
+    public interface IBaseServicoDominio<T> where T : class
     {
         void Adicionar(T obj);
 
@@ -14,7 +14,7 @@ namespace MMW.Dominio.Interfaces.Servicos
 
         void Atualizar(T obj);
 
-        void Excluir(T obj);
+        void Excluir(int id);
 
         void Dispose();
     }

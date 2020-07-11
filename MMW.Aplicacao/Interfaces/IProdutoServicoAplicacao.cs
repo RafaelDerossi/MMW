@@ -14,7 +14,7 @@ namespace MMW.Aplicacao.Interfaces
 
         void Atualizar(ProdutoViewModel produtoViewModel);
 
-        void Excluir(ProdutoViewModel produtoViewModel);
+        void Excluir(int id);
 
         void Dispose();
     }

@@ -112,13 +112,7 @@ namespace MMW.Aplicacao.ViewModels
         public decimal Markup { get; set; }
 
         [Display(Name = "Preço de Venda Sugerido")]
-        public decimal PrcVendaSugerido
-        {
-            get
-            {
-                return PrcCustoCalc * ((Markup / 100) + 1);
-            }
-        }
-            
+        public decimal PrcVendaSugerido { get; set; }        
+               
     }
 }

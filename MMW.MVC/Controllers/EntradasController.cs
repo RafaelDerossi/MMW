@@ -28,7 +28,7 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(_entradaServicoAplicacao.DetalharId(id));
         }
 
         // GET: LojasController/Create

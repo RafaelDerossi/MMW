@@ -1,0 +1,264 @@
+﻿@model MMW.Aplicacao.ViewModels.EntradaViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Detalhes da Entrada</h1>
+        </div>
+        <div class="col-lg-6">
+            <div>
+                @Html.ActionLink("Adicionar Produto", "Create", "ItensEntrada", new { entradaId = Model.Id }) |
+                @Html.ActionLink("Editar Entrada", "Edit", new { id = Model.Id }) |
+                <a asp-action="Index">Voltar para a Lista</a>
+            </div>
+        </div>
+    </div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="img-thumbnail">
+            <h4>Loja</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Loja.Fantasia)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Loja.Fantasia)
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="img-thumbnail">
+            <h4>Fornecedor</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Fornecedor.Fantasia)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Fornecedor.Fantasia)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="img-thumbnail">
+            <h4>Entrada</h4>
+            <hr />
+            <div class="row">
+                <div class="col-lg-6">
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Id)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Id)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.DataInclusao)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.DataInclusao)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.DataAlteracao)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.DataAlteracao)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.DataEmissaoNota)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.DataEmissaoNota)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.NumeroNota)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.NumeroNota)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Baixada)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Baixada)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.DataBaixa)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.DataBaixa)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-lg-6">
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Seguro)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Seguro)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Frete)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Frete)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.OutrasDespesas)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.OutrasDespesas)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Desconto)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Desconto)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.TotalDosProdutos)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.TotalDosProdutos)
+                        </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.TotalNota)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.TotalNota)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="">
+            <h4>Itens da Entrada</h4>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Item)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Produto.Descricao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().CodIntForn)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Qtd)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().PrcUnit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Desconto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Total)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Seguro)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Frete)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().OutrasDespesas)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().PrcCustoCalc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().Markup)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Itens.FirstOrDefault().PrcVendaSugerido)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Itens)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => item.Item)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Produto.Descricao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.CodIntForn)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Qtd)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.PrcUnit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Desconto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Total)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Seguro)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Frete)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.OutrasDespesas)
+                            </td>                            
+                            <td>
+                                @Html.DisplayFor(model => item.PrcCustoCalc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.Markup)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => item.PrcVendaSugerido)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", "ItensEntrada", new { id = item.Id }) |                                
+                                @Html.ActionLink("Deletar", "Delete","ItensEntrada", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

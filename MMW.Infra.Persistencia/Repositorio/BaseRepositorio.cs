@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MMW.Dominio.Interfaces.Servicos;
+using MMW.Dominio.Interfaces.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace MMW.Infra.Persistencia.Repositorio
 {
@@ -52,11 +51,11 @@ namespace MMW.Infra.Persistencia.Repositorio
             _contexto.Dispose();
         }
 
-        public void Excluir(T obj)
+        public void Excluir(int id)
         {
             try
             {
-                _contexto.Set<T>().Remove(obj);
+                _contexto.Set<T>().Remove(_contexto.Set<T>().Find(id));
                 _contexto.SaveChanges();
             }
             catch (Exception e)
