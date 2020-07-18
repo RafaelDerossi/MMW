@@ -20,7 +20,7 @@ namespace MMW.Aplicacao.Servicos
             _mapper = mapper;
         }
 
-        public void Adicionar(EntradaViewModel entradaViewModel)
+        public EntradaViewModel Adicionar(EntradaViewModel entradaViewModel)
         {
             try
             {
@@ -28,6 +28,7 @@ namespace MMW.Aplicacao.Servicos
                 var entrada = new Entrada();
                 _mapper.Map(entradaViewModel, entrada);
                 _entradaServicoDominio.Adicionar(entrada);
+                return _mapper.Map(entrada, entradaViewModel);
             }
             catch (Exception e)
             {

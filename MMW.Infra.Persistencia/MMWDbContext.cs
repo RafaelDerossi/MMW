@@ -47,6 +47,9 @@ namespace MMW.Infra.Persistencia
             }
 
             modelBuilder.ApplyConfiguration(new ProdutoConfiguracao());
+            modelBuilder.ApplyConfiguration(new LojaConfiguracao());
+            modelBuilder.ApplyConfiguration(new EstoqueConfiguracao());
+            modelBuilder.ApplyConfiguration(new FornecedorConfiguracao());
         }
 
         public override int SaveChanges()

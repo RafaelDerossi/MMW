@@ -14,9 +14,10 @@ namespace MMW.Dominio.Servicos
             _repositorio = repositorio;
         }
 
-        public void Adicionar(T obj)
+        public T Adicionar(T obj)
         {
             _repositorio.Adicionar(obj);
+            return obj;
         }
 
         public void Atualizar(T obj)

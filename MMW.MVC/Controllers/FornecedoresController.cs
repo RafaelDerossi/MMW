@@ -24,7 +24,7 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(_fornecedorServicoAplicacao.DetalharId(id));
         }
 
         // GET: LojasController/Create
@@ -52,16 +52,17 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(_fornecedorServicoAplicacao.DetalharId(id));
         }
 
         // POST: LojasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(FornecedorViewModel fornecedorViewModel)
         {
             try
             {
+                _fornecedorServicoAplicacao.Atualizar(fornecedorViewModel);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -73,16 +74,17 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_fornecedorServicoAplicacao.DetalharId(id));
         }
 
         // POST: LojasController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(FornecedorViewModel fornecedorViewModel)
         {
             try
             {
+                _fornecedorServicoAplicacao.Excluir(fornecedorViewModel.Id);
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -6,7 +6,7 @@ namespace MMW.Aplicacao.Interfaces
 {
    public interface IEntradaServicoAplicacao
     {
-        void Adicionar(EntradaViewModel entradaViewModel);
+        EntradaViewModel Adicionar(EntradaViewModel entradaViewModel);
 
         EntradaViewModel DetalharId(int id);
 

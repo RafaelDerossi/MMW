@@ -8,6 +8,8 @@ namespace MMW.Aplicacao.ViewModels
   public class LojaViewModel : BaseViewModel
     {
         [Display(Name = "CNPJ")]
+        [MinLength(14, ErrorMessage = "CNPJ deve ter 14 digitos")]
+        [MaxLength(14, ErrorMessage = "CNPJ deve ter 14 digitos")]
         public string CNPJ { get; set; }
 
         [Display(Name = "Razao Social")]

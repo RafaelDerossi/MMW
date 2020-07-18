@@ -15,12 +15,13 @@ namespace MMW.Infra.Persistencia.Repositorio
             _contexto = contexto;
         }
 
-        public void Adicionar(T obj)
+        public T Adicionar(T obj)
         {
             try
             {
                 _contexto.Set<T>().Add(obj);
                 _contexto.SaveChanges();
+                return obj;
             }
             catch (Exception e)
             {

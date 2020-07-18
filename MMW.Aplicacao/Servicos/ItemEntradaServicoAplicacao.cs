@@ -25,8 +25,7 @@ namespace MMW.Aplicacao.Servicos
             try
             {                
                 var itemEntrada = _mapper.Map<ItemEntrada>(itemEntradaViewModel);
-                //var itemEntrada = new ItemEntrada();
-                //_mapper.Map(itemEntradaViewModel, itemEntrada);
+                itemEntrada.CalculaTotalItem();
                 itemEntrada.CalculaPrcCusto();
                 _itemEntradaServicoDominio.Adicionar(itemEntrada);
             }

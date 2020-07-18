@@ -46,8 +46,8 @@ namespace MMW.MVC.Controllers
         {
             try
             {
-                _entradaServicoAplicacao.Adicionar(entradaViewModel);
-                return RedirectToAction(nameof(Index));
+                entradaViewModel = _entradaServicoAplicacao.Adicionar(entradaViewModel);
+                return RedirectToAction("Details", new { id = entradaViewModel.Id });
             }
             catch
             {
@@ -58,17 +58,21 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var entradaVM = _entradaServicoAplicacao.DetalharId(id);
+            ViewBag.lojaId = new SelectList(_lojaServicoAplicacao.Listar(), "Id", "Fantasia", entradaVM.LojaId);
+            ViewBag.fornecedorId = new SelectList(_fornecedorServicoAplicacao.Listar(), "Id", "Fantasia", entradaVM.FornecedorId);
+            return View(entradaVM);
         }
 
         // POST: LojasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(EntradaViewModel entradaViewModel)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _entradaServicoAplicacao.Atualizar(entradaViewModel);
+                return RedirectToAction("Details", new { id=entradaViewModel.Id });
             }
             catch
             {
@@ -79,16 +83,17 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_entradaServicoAplicacao.DetalharId(id));
         }
 
         // POST: LojasController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(EntradaViewModel entradaViewModel)
         {
             try
             {
+                _entradaServicoAplicacao.Excluir(entradaViewModel.Id);
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -4,14 +4,16 @@ using MMW.Infra.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MMW.Infra.Persistencia.Migrations
 {
     [DbContext(typeof(MMWDbContext))]
-    partial class MMWDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200718174629_CNPJ14_e_IndexEstoque")]
+    partial class CNPJ14_e_IndexEstoque
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

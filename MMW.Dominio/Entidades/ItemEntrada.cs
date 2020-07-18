@@ -107,6 +107,10 @@ namespace MMW.Dominio.Entidades
             }
         }
 
+        public void CalculaTotalItem()
+        {
+            Total = PrcUnit * Qtd;
+        }
 
         public void CalculaPrcCusto()
         {

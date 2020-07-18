@@ -6,7 +6,7 @@ namespace MMW.Dominio.Interfaces.Servicos
 {
     public interface IBaseServicoDominio<T> where T : class
     {
-        void Adicionar(T obj);
+        T Adicionar(T obj);
 
         T DetalharId(int id);
 

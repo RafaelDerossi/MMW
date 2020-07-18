@@ -6,7 +6,7 @@ namespace MMW.Dominio.Interfaces.Repositorios
 {
     public interface IBaseRepositorio<T> where T : class
     {
-        void Adicionar(T obj);
+         T Adicionar(T obj);
 
         T DetalharId(int id);
 
