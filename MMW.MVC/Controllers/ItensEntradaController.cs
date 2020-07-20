@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MMW.Aplicacao.Interfaces;
 using MMW.Aplicacao.ViewModels;
@@ -60,17 +55,20 @@ namespace MMW.MVC.Controllers
         // GET: LojasController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var itemEntrada = _itemEntradaServicoAplicacao.DetalharId(id);            
+            ViewBag.produtoId = new SelectList(_produtoServicoAplicacao.Listar(), "Id", "Descricao", itemEntrada.ProdutoId);
+            return View(_itemEntradaServicoAplicacao.DetalharId(id));
         }
 
         // POST: LojasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ItemEntradaViewModel itemEntradaViewModel)
+        public ActionResult Edit(ItemEntradaViewModel itemEntradaViewModel, int entradaId)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _itemEntradaServicoAplicacao.Atualizar(itemEntradaViewModel);
+                return RedirectToAction("Details", "Entradas", new { id = entradaId });              
             }
             catch
             {
