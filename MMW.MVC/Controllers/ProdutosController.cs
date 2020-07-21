@@ -19,13 +19,7 @@ namespace MMW.MVC.Controllers
         {
             return View(_produtoServicoAplicacao.Listar());
         }
-
-        // GET: ProdutosController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View(_produtoServicoAplicacao.DetalharId(id));
-        }
-
+        
         // GET: ProdutosController/Create
         public ActionResult Create()
         {

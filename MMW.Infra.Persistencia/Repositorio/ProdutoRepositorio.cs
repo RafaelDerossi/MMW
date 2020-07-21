@@ -20,9 +20,11 @@ namespace MMW.Infra.Persistencia.Repositorio
             {
                 try
                 {
+                    //Add produto
                     _contexto.Produtos.Add(produto);
                     _contexto.SaveChanges();
 
+                    //Add estoques
                     var listaLojas = _contexto.Lojas.ToList();
                     foreach (var loja in listaLojas)
                     {
@@ -36,14 +38,54 @@ namespace MMW.Infra.Persistencia.Repositorio
 
                     _contexto.SaveChanges();
 
+                    try
+                    {
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
                     return produto;
                 }
                 catch (Exception e)
                 {
                     throw e;
                 }
+
+               
             }
         }
 
+        public new void Excluir(int id)
+        {
+            using (var dbContextTransaction = _contexto.Database.BeginTransaction())
+            {
+                try
+                {
+                    //Exclui Estoques
+                    var listaEstoques = _contexto.Estoques
+                        .Where(e=>e.ProdutoId == id)
+                        .ToList();
+                    foreach (var estoque in listaEstoques)
+                    {   
+                        _contexto.Estoques.Remove(estoque);
+                    }
+                    
+                    //Exclui Produto
+                    _contexto.Produtos.Remove(_contexto.Produtos.Find(id));
+                    _contexto.SaveChanges();
+
+                    dbContextTransaction.Commit();                    
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }               
+
+
+            }
+        }
     }
 }

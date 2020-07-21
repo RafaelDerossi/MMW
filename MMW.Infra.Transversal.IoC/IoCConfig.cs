@@ -47,6 +47,13 @@ namespace MMW.Infra.Transversal.IoC
 
             builder.RegisterType<ItemEntradaRepositorio>().As<IItemEntradaRepositorio>();
 
+
+            builder.RegisterType<EstoqueServicoAplicacao>().As<IEstoqueServicoAplicacao>();
+
+            builder.RegisterType<EstoqueServicoDominio>().As<IEstoqueServicoDominio>();
+
+            builder.RegisterType<EstoqueRepositorio>().As<IEstoqueRepositorio>();
+
         }
     }
 }
